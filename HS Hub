@@ -1,1 +1,14 @@
-# HS-Hub-universal
+https://github.com/r4tin/1010101010101/blob/main/Whitelist
+loadstring(game:HttpGet('https://github.com/r4tin/1010101010101/blob/main/Whitelist'))()
+local whitelisted
+local hide
+if unpack(whitelist) == tostring(game.Players.LocalPlayer.UserId) then
+    whitelisted = true
+    else
+    whitelisted = false
+end
+if whitelisted == true then
+    hide = false
+    else
+    hide = true
+end
