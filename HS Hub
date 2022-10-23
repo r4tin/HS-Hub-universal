@@ -1,5 +1,4 @@
-https://github.com/r4tin/1010101010101/blob/main/Whitelist
-loadstring(game:HttpGet('https://github.com/r4tin/1010101010101/blob/main/Whitelist'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/r4tin/1010101010101/main/Whitelist'))()
 local whitelisted
 local hide
 if unpack(whitelist) == tostring(game.Players.LocalPlayer.UserId) then
@@ -12,3 +11,146 @@ if whitelisted == true then
     else
     hide = true
 end
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "HS Hub", HidePremium = false, SaveConfig = true, ConfigFolder = "HS hub"})
+local Tab = Window:MakeTab({
+	Name = "Home",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Edition: HS Hub Universal"
+})
+
+local Tab = Window:MakeTab({
+	Name = "FE scripts",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "ehe"
+})
+
+local Tab = Window:MakeTab({
+	Name = "Troll options",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "Here you will have nice options."
+})
+
+Tab:AddTextbox({
+	Name = "Kill",
+	Default = "put the name",
+	TextDisappear = true,
+	Callback = function(txt)
+		    local old = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    local target = game.Players[txt]
+    for i=1, 5, 1 do
+    if target then
+            local root = target.Character:FindFirstChild("HumanoidRootPart") or target.Character:FindFirstChild("Torso")
+            if root then
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = root.CFrame
+            end
+        end
+    end
+
+    task.wait()
+    game.Players.LocalPlayer.Character.Humanoid.Name = 1
+    local l = game.Players.LocalPlayer.Character["1"]:Clone()
+    l.Parent = game.Players.LocalPlayer.Character
+    l.Name = "Humanoid"
+    task.wait()
+    game.Players.LocalPlayer.Character["1"]:Destroy()
+    game.Workspace.CurrentCamera.CameraSubject = game.Players.LocalPlayer.Character
+    game.Players.LocalPlayer.Character.Animate.Disabled = true
+    task.wait()
+    game.Players.LocalPlayer.Character.Animate.Disabled = false
+    game.Players.LocalPlayer.Character.Humanoid.DisplayDistanceType = "None"
+    for i,v in pairs(game:GetService'Players'.LocalPlayer.Backpack:GetChildren())do
+    game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+    end
+    task.wait(0.2)
+    game.Players.LocalPlayer.Character.Humanoid.Health = -60000
+    local prt=Instance.new("Model", workspace);
+    Instance.new("Humanoid", prt).Name="Humanoid";
+    game.Players.LocalPlayer.Character=prt
+    if plr.Character then
+        target.Character:WaitForChild("HumanoidRootPart").CFrame = old
+    end
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Bring",
+	Default = "put the name",
+	TextDisappear = true,
+	Callback = function(txt)
+		local nm = math.random(1, 9999)
+local amm = "Hammer" .. nm
+--game.Players.LocalPlayer.Backpack.Hammer.Name = amm
+local CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+local Target = (txt)
+for i,x in pairs(game.Players:GetPlayers()) do
+if x.Name == Target then
+game:GetService("Players").LocalPlayer.Character.Humanoid:UnequipTools()
+local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid:Clone()
+Humanoid.BreakJointsOnDeath = false
+game.Players.LocalPlayer.Character.Animate.Disabled = true
+game:GetService("Players").LocalPlayer.Character.Humanoid:Destroy()
+Humanoid.Parent = game:GetService("Players").LocalPlayer.Character
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+    if v:IsA("Tool") then
+        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+        getgenv().a = true
+        while getgenv().a and wait() do
+        x.Character:FindFirstChild("HumanoidRootPart").CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+        --wait(3)
+        --game.Players.LocalPlayer.Character.HumanoidRootPart:Destroy()
+        end
+    end
+end
+end
+end
+wait()
+game.Players.LocalPlayer.CharacterAdded:Wait():WaitForChild("HumanoidRootPart")
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Tp",
+	Default = "put the name",
+	TextDisappear = true,
+	Callback = function(txt)
+		for i, v in pairs(game.Players:GetPlayers()) do
+          if v.Name == txt or v.DisplayName == txt and v.Character then
+          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+    end
+  end
+	end	  
+})
+
+local Tab = Window:MakeTab({
+	Name = "Network Options",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+local Section = Tab:AddSection({
+	Name = "I don't know if the 3D clothing collision options will work, but I'll put"
+})
+
+local Tab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddBind({
+	Name = "Bind to close the menu",
+	Default = Enum.KeyCode.E,
+	Hold = false,
+	Callback = function()
+		Library:ToggleUI()
+	end    
+})
