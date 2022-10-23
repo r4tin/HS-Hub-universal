@@ -30,6 +30,10 @@ local Tab = Window:MakeTab({
 local Section = Tab:AddSection({
 	Name = "ehe"
 })
+if hide then
+else
+print("does not have access to the universal HS Hub lol")
+end
 
 local Tab = Window:MakeTab({
 	Name = "Troll options",
