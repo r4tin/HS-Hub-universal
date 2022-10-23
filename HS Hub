@@ -12,7 +12,11 @@ if whitelisted == true then
     hide = true
 end
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+if hide then
 local Window = OrionLib:MakeWindow({Name = "HS Hub", HidePremium = true, SaveConfig = true, ConfigFolder = "HS hub"})
+else
+print("does not have access to the universal HS Hub lol")
+end
 local Tab = Window:MakeTab({
 	Name = "Home",
 	Icon = "rbxassetid://4483345998",
